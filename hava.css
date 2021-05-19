@@ -1,0 +1,72 @@
+body
+{
+    background-image: url(https://as2.ftcdn.net/jpg/00/56/98/15/500_F_56981572_x5ovJv8GDHyAttHsUGxLQpuiaPz3YBAL.jpg);
+}
+
+.metaryel
+{
+    width: 400px;
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 150px;
+}
+#sehirTxt
+{
+    width: 200px;
+    height: 50px;
+    margin-left:100px;
+    margin-top: 40px;
+    font-family: 'Dela Gothic One', cursive;
+    font-family: 'Oswald', sans-serif;
+    font-size:18px;
+}
+#sehirBtn
+{
+    width: 100px;
+    height: 50px;
+    margin-left: 150px;
+    font-family: 'Dela Gothic One', cursive;
+    font-family: 'Oswald', sans-serif;
+}
+.info
+{
+ 
+    width: 900px;
+    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    
+    
+    align-items: center;
+
+
+}
+#baslik
+{
+    font-family: 'Dela Gothic One', cursive;
+    font-family: 'Oswald', sans-serif;
+   text-align: center;
+   
+
+}
+.info img
+{
+    object-fit: cover;
+    height:100%;
+    width: 100%;
+
+}
+.info11
+{
+    width: 170px;
+    height: 70px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    background-color: white;
+    font-family: 'Dela Gothic One', cursive;
+    font-size:50px;
+    
+}

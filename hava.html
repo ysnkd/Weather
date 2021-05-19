@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<link href="hava.css" rel="stylesheet">
+<html lang="tr">
+<head>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Oswald:wght@500&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>Hava Durumu</title>
+</head>
+<body>
+    
+    <h1 id="baslik">GÜNLÜK HAVA DURUMU</h1>
+    
+    <div class="metaryel">
+        <input type="text" id="sehirTxt"><br><br>
+        <button id="sehirBtn">Ara</button>
+    </div>
+    <div class="info" id="info1">
+    </div>
+    <div class="info11" id="info2"></div>
+
+    <script>
+var sehirButon = document.getElementById('sehirBtn');
+var sehirText = document.getElementById('sehirTxt');
+var info = document.getElementById('info1');
+var info2=document.getElementById('info2');
+var cityTemp;
+sehirButon.addEventListener('click', function () {
+    HavaDurumuGetir(sehirText.value);
+})
+
+function HavaDurumuGetir(city)
+{
+    fetch('http://api.openweathermap.org/data/2.5/weather?q='+ city +'&appid=09632203c901d820121c90566c720bfa')
+    .then(response => response.json())
+            .then(data => { 
+                
+                info2.innerHTML=" ";
+                info2.innerHTML+=((Math.round((data.main.temp)-273.15))+ " °C" );
+                
+                console.log(data);
+                if(data.weather[0].main=="Clouds")
+                {
+                    
+                    info.innerHTML= `<img src="https://cdn.shopify.com/s/files/1/1406/4308/articles/Looking-at-the-clouds-can-help-you-predict-bad-weather-_697_6052888_0_14103285_1000_1024x.jpg?v=1500990343">`
+                }
+                else if(data.weather[0].main=="Rain")
+                {
+                    info.innerHTML= " ";
+                    info.innerHTML= `<img src="https://i.pinimg.com/originals/c8/6e/13/c86e13f72db95c634375187d52efdae6.jpg">`
+                }
+                else if(data.weather[0].main=="Snow")
+                {
+                    info.innerHTML= " "; 
+                    info.innerHTML= `<img src="https://adminassets.devops.arabiaweather.com/sites/default/files/field/image/snow-title.jpg">`
+                }
+                else if(data.weather[0].main=="Clear")
+                {
+                    info.innerHTML= " ";
+                    info.innerHTML= `<img src="https://play-lh.googleusercontent.com/I9EEfFx5YRpgzMdVUA5SssBdpjMiSutp2-x__Cm879HDmHJ4S30f9RSBw9ftqfFpZ0Y">`
+                }
+                
+            });
+           
+            
+
+
+
+}
+
+
+    </script>
+</body>
+</html>
